@@ -7,6 +7,7 @@ class BrandColors {
   static const mudRedColor = Color(0xFFD9251D);
   static const greenColor = Color(0xFF16A997);
   static const seaBlueColor = Color(0xFF47CFFF);
+  static const lineWhite = Color(0xFF2C3F5B);
 }
 
 /// Apps theme colors

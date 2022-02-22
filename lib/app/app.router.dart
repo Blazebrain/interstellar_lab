@@ -7,7 +7,6 @@
 // ignore_for_file: public_member_api_docs
 
 import 'package:stacked/stacked.dart';
-import 'package:stacked/stacked_annotations.dart';
 
 import '../ui/views/home/nav_bar/nav_bar_view.dart';
 import '../ui/views/home/nav_bar_pages/events/events_view.dart';

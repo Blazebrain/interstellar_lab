@@ -1,22 +1,15 @@
 import 'package:interstellar_labs/models/all_movies/all_movies.dart';
-import 'package:interstellar_labs/models/dates/dates_model.dart';
 
-class NowPlayingResponseModel {
-  Dates? dates;
+class SearchResponseModel {
   int? page;
   List<AllMovies>? results;
   int? totalPages;
   int? totalResults;
 
-  NowPlayingResponseModel(
-      {this.dates,
-      this.page,
-      this.results,
-      this.totalPages,
-      this.totalResults});
+  SearchResponseModel(
+      {this.page, this.results, this.totalPages, this.totalResults});
 
-  NowPlayingResponseModel.fromJson(Map<String, dynamic> json) {
-    dates = json['dates'] != null ? Dates.fromJson(json['dates']) : null;
+  SearchResponseModel.fromJson(Map<String, dynamic> json) {
     page = json['page'];
     if (json['results'] != null) {
       results = <AllMovies>[];
@@ -30,9 +23,6 @@ class NowPlayingResponseModel {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    if (dates != null) {
-      data['dates'] = dates!.toJson();
-    }
     data['page'] = page;
     if (results != null) {
       data['results'] = results!.map((v) => v.toJson()).toList();

@@ -1,11 +1,11 @@
 import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:interstellar_labs/app/app.locator.dart';
-import 'package:interstellar_labs/app/app.router.dart';
-import 'package:interstellar_labs/ui/shared/snackbar/setup_snackbar.dart';
 import 'package:stacked_services/stacked_services.dart';
+
+import 'app/app.locator.dart';
+import 'app/app.router.dart';
+import 'ui/shared/snackbar/setup_snackbar.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

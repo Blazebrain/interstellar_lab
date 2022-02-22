@@ -6,6 +6,8 @@ class ApiConstants {
   /// tmdb api constants
   static const tmdbApiHost = 'api.themoviedb.org';
   static const tmdbApiVersion = '3';
+  static const genreEndpoint = '/genre';
+  static const searchEndpoint = '/search';
   static const movieEndpoint = '/movie';
   static const apiKey = '7239fd4bdd285b8bf64931217bf1e9b7';
 
@@ -15,14 +17,10 @@ class ApiConstants {
   static const connectTimeout = 10000;
 
   // Base Uris
-
-  /// Raptures
   static get tmdbBaseUri =>
       Uri(scheme: httpsScheme, host: tmdbApiHost, path: '/');
 
   // Endpoints
-
-  /// tmdb
   static get getNowPlayingMovies => Uri(
         scheme: httpsScheme,
         host: tmdbApiHost,
@@ -35,5 +33,19 @@ class ApiConstants {
         host: tmdbApiHost,
         path: '$tmdbApiVersion$movieEndpoint/upcoming/',
         query: 'api_key=$apiKey',
+      );
+
+  static get getGenreList => Uri(
+        scheme: httpsScheme,
+        host: tmdbApiHost,
+        path: '$tmdbApiVersion$genreEndpoint$movieEndpoint/list',
+        query: 'api_key=$apiKey',
+      );
+
+  static Uri searchForMovie(String searchItem) => Uri(
+        scheme: httpsScheme,
+        host: tmdbApiHost,
+        path: '$tmdbApiVersion$searchEndpoint$movieEndpoint',
+        query: 'api_key=$apiKey&query=$searchItem',
       );
 }

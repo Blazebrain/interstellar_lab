@@ -9,6 +9,7 @@ import 'package:interstellar_labs/ui/views/home/nav_bar_pages/events/events_view
 import 'package:interstellar_labs/ui/views/home/nav_bar_pages/movie_reel/movie_reel_view.dart';
 import 'package:interstellar_labs/ui/views/home/nav_bar_pages/notification/notification_view.dart';
 import 'package:interstellar_labs/ui/views/home/nav_bar_pages/profile/profile_view.dart';
+import 'package:interstellar_labs/ui/views/home/search/search_view.dart';
 import 'package:interstellar_labs/ui/views/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -16,6 +17,7 @@ import 'package:stacked_services/stacked_services.dart';
 @StackedApp(
   routes: [
     AdaptiveRoute(page: StartUpView),
+    AdaptiveRoute(page: SearchView),
     AdaptiveRoute(
       page: NavBarView,
       children: [

@@ -6,8 +6,8 @@ part 'all_movies.g.dart';
 class AllMovies {
   bool? adult;
   String? backdropPath;
-  List<num>? genreIds;
-  num? id;
+  List<int>? genreIds;
+  int? id;
   String? originalLanguage;
   String? originalTitle;
   String? overview;
@@ -16,8 +16,8 @@ class AllMovies {
   String? releaseDate;
   String? title;
   bool? video;
-  double? voteAverage;
-  double? voteCount;
+  num? voteAverage;
+  int? voteCount;
 
   AllMovies(
       {this.adult,
@@ -38,7 +38,7 @@ class AllMovies {
   AllMovies.fromJson(Map<String, dynamic> json) {
     adult = json['adult'];
     backdropPath = json['backdrop_path'];
-    genreIds = json['genre_ids'].cast<double>();
+    genreIds = json['genre_ids'].cast<int>();
     id = json['id'];
     originalLanguage = json['original_language'];
     originalTitle = json['original_title'];
