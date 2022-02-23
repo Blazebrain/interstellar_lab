@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../../../../../shared/dumb_widgets/const_widgets.dart';
-import '../../widgets/movie_tile.dart';
+import '../../../../../../shared/smart_widgets/movie_tile/movie_tile.dart';
 import 'upcoming_tab_viewmodel.dart';
 
 class UpcomingTabView extends StatelessWidget {

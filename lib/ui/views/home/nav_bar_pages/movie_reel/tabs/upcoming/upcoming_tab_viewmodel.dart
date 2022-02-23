@@ -1,7 +1,9 @@
 import 'package:interstellar_labs/app/app.locator.dart';
 import 'package:interstellar_labs/models/all_movies/all_movies.dart';
 import 'package:interstellar_labs/models/genres/genre_model.dart';
+import 'package:interstellar_labs/services/local_storage/local_storage.dart';
 import 'package:interstellar_labs/services/movies/movies.dart';
+import 'package:interstellar_labs/utils/export_utils.dart';
 import 'package:stacked/stacked.dart';
 
 class UpcomingTabViewModel extends BaseViewModel {
@@ -25,6 +27,7 @@ class UpcomingTabViewModel extends BaseViewModel {
 
   getGenreList() async {
     _genresList = await _movieService.getMovieGenre();
+    // Saves the genresList and Ids to local storage for future comparison
   }
 
   String? getGenreName(int index) {

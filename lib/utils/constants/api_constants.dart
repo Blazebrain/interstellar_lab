@@ -48,4 +48,18 @@ class ApiConstants {
         path: '$tmdbApiVersion$searchEndpoint$movieEndpoint',
         query: 'api_key=$apiKey&query=$searchItem',
       );
+
+  static Uri getMovieDetails(int? movieId) => Uri(
+        scheme: httpsScheme,
+        host: tmdbApiHost,
+        path: '$tmdbApiVersion$movieEndpoint$movieId',
+        query: 'api_key=$apiKey',
+      );
+
+  static Uri getCastAndCrew(int movieId) => Uri(
+        scheme: httpsScheme,
+        host: tmdbApiHost,
+        path: '$tmdbApiVersion$movieEndpoint$movieId/credits',
+        query: 'api_key=$apiKey',
+      );
 }

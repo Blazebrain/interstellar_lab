@@ -1,6 +1,7 @@
 import 'package:hive/hive.dart';
 import 'package:interstellar_labs/app/app.logger.dart';
 import 'package:interstellar_labs/models/all_movies/all_movies.dart';
+import 'package:interstellar_labs/models/genres/genre_model.dart';
 import 'package:interstellar_labs/services/local_storage/local_storage.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
 
@@ -22,6 +23,7 @@ class LocalStorageService implements ILocalStorage {
   /// Register Hive adapters here
   static void _setupAllHiveTypeAdapters() {
     Hive.registerAdapter(AllMoviesAdapter());
+    Hive.registerAdapter(GenresAdapter());
   }
 
   @override

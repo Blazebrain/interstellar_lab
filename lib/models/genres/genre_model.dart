@@ -1,3 +1,7 @@
+import 'package:hive/hive.dart';
+import 'package:interstellar_labs/utils/hive_type_id_keys/hive_type_id_keys.dart';
+part 'genre_model.g.dart';
+
 class GenreResponseModel {
   List<Genres>? genres;
 
@@ -21,8 +25,11 @@ class GenreResponseModel {
   }
 }
 
+@HiveType(typeId: HiveTypeIdKeys.genreTypeIdKey)
 class Genres {
+  @HiveField(0)
   int? id;
+  @HiveField(1)
   String? name;
 
   Genres({this.id, this.name});

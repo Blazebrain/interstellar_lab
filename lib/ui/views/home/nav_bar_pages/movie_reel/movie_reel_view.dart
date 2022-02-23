@@ -26,17 +26,17 @@ class MovieReel extends StatelessWidget {
           child: DefaultTabController(
             length: 2,
             child: Scaffold(
-              backgroundColor: ThemeColors.backgroundColor,
               appBar: AppBar(
-                backgroundColor: ThemeColors.backgroundColor,
-                elevation: 0.0,
                 title: Text(
                   'Star Movie',
                   style: TextStyle(fontSize: 24.sp),
                 ),
                 automaticallyImplyLeading: false,
                 actions: [
-                  const Icon(Icons.search),
+                  GestureDetector(
+                    onTap: viewModel.goToSearchView,
+                    child: const Icon(Icons.search),
+                  ),
                   horizontalSpaceSmall,
                 ],
               ),

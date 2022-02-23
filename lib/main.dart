@@ -1,6 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:interstellar_labs/ui/shared/colors.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 import 'app/app.locator.dart';
@@ -36,6 +37,13 @@ class MyApp extends StatelessWidget {
           builder: DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
           initialRoute: Routes.startUpView,
+          theme: ThemeData(
+              backgroundColor: ThemeColors.backgroundColor,
+              scaffoldBackgroundColor: ThemeColors.backgroundColor,
+              appBarTheme: const AppBarTheme(
+                backgroundColor: ThemeColors.backgroundColor,
+                elevation: 0.0,
+              )),
         );
       },
     );

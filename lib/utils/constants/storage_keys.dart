@@ -1,4 +1,5 @@
 /// Local storage keys for hive boxes
 class StorageKeys {
-  static const authBox = 'authBox';
+  static const moviesBox = 'moviesBox';
+  static const genreBox = 'genreBox';
 }

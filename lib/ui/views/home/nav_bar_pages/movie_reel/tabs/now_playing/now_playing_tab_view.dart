@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../../../../../shared/dumb_widgets/const_widgets.dart';
-import '../../widgets/movie_tile.dart';
+import '../../../../../../shared/smart_widgets/movie_tile/movie_tile.dart';
 import 'now_playing_tab_viewmodel.dart';
 
 class NowPlayingTabView extends StatelessWidget {
@@ -19,7 +19,7 @@ class NowPlayingTabView extends StatelessWidget {
             ? const Center(
                 child: ReusableDotProgressIndicator(),
               )
-            : Center(
+            : Expanded(
                 child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
