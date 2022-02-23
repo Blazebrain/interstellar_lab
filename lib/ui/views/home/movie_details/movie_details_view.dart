@@ -33,7 +33,7 @@ class MovieDetailsView extends StatelessWidget {
             slivers: [
               SliverAppBar(
                 pinned: true,
-                expandedHeight: 300,
+                expandedHeight: 280,
                 leading: GestureDetector(
                   onTap: () {
                     viewModel.goBack();
@@ -95,10 +95,31 @@ class MovieDetailsView extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 16.sp,
+                        fontWeight: FontWeight.w400,
                         color: BrandColors.whiteColor.withOpacity(0.5),
                       ),
                     ),
                     verticalSpaceSmall,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: viewModel.genreNames
+                          .map(
+                            (e) => Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                e,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  color:
+                                      BrandColors.whiteColor.withOpacity(0.55),
+                                  fontSize: 16.sp,
+                                ),
+                              ),
+                            ),
+                          )
+                          .toList(),
+                    ),
+                    verticalSpaceMedium,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -128,25 +149,7 @@ class MovieDetailsView extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: viewModel.genreNames
-                          .map(
-                            (e) => Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                e,
-                                style: TextStyle(
-                                  color:
-                                      BrandColors.whiteColor.withOpacity(0.55),
-                                  fontSize: 16.sp,
-                                ),
-                              ),
-                            ),
-                          )
-                          .toList(),
-                    ),
-                    verticalSpaceMedium,
+                    verticalSpaceLarge,
                     Container(
                       height: 36.h,
                       margin: EdgeInsets.symmetric(horizontal: 18.w),

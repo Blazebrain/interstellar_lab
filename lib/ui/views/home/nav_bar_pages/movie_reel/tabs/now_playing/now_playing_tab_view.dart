@@ -3,12 +3,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../../../../../shared/dumb_widgets/const_widgets.dart';
-import '../../../../../../shared/smart_widgets/movie_tile/movie_tile.dart';
+import '../../../../../../shared/smart_widgets/movie_tile/movie_tile_view.dart';
 import 'now_playing_tab_viewmodel.dart';
 
-class NowPlayingTabView extends StatelessWidget {
+class NowPlayingTabView extends StatefulWidget {
   const NowPlayingTabView({Key? key}) : super(key: key);
 
+  @override
+  State<NowPlayingTabView> createState() => _NowPlayingTabViewState();
+}
+
+class _NowPlayingTabViewState extends State<NowPlayingTabView>
+    with AutomaticKeepAliveClientMixin<NowPlayingTabView> {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<NowPlayingTabVIewModel>.reactive(
@@ -37,4 +43,7 @@ class NowPlayingTabView extends StatelessWidget {
       },
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

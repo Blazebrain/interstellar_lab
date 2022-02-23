@@ -11,15 +11,21 @@ import 'package:stacked/stacked.dart';
 
 import 'details_tab_viewmodel.dart';
 
-class DetailsTabView extends StatelessWidget {
+class DetailsTabView extends StatefulWidget {
   final AllMovies? movieModel;
   const DetailsTabView({Key? key, this.movieModel}) : super(key: key);
 
   @override
+  State<DetailsTabView> createState() => _DetailsTabViewState();
+}
+
+class _DetailsTabViewState extends State<DetailsTabView>
+    with AutomaticKeepAliveClientMixin<DetailsTabView> {
+  @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<DetailsTabViewModel>.reactive(
       viewModelBuilder: () => DetailsTabViewModel(),
-      onModelReady: (viewModel) => viewModel.setUp(movieModel!.id!),
+      onModelReady: (viewModel) => viewModel.setUp(widget.movieModel!.id!),
       builder: (context, viewModel, child) {
         return viewModel.isBusy
             ? const Center(child: ReusableDotProgressIndicator())
@@ -41,7 +47,7 @@ class DetailsTabView extends StatelessWidget {
                       ),
                       verticalSpaceRegular,
                       Text(
-                        movieModel!.overview!,
+                        widget.movieModel!.overview!,
                         maxLines: 4,
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
@@ -140,4 +146,7 @@ class DetailsTabView extends StatelessWidget {
       },
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

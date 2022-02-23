@@ -45,6 +45,7 @@ class MovieReel extends StatelessWidget {
                 child: Column(
                   children: [
                     Container(
+                      height: 48.h,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(26.r)),
                         border: Border.all(
@@ -59,6 +60,7 @@ class MovieReel extends StatelessWidget {
                         ),
                         tabs: [
                           Tab(
+                            // height: 32.h,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [

@@ -9,15 +9,21 @@ import 'package:interstellar_labs/ui/views/home/movie_details/tabs/reviews/revie
 import 'package:interstellar_labs/ui/views/home/movie_details/tabs/reviews/widgets/review_tile.dart';
 import 'package:stacked/stacked.dart';
 
-class ReviewsTabView extends StatelessWidget {
+class ReviewsTabView extends StatefulWidget {
   final AllMovies? movieModel;
   const ReviewsTabView({Key? key, this.movieModel}) : super(key: key);
 
   @override
+  State<ReviewsTabView> createState() => _ReviewsTabViewState();
+}
+
+class _ReviewsTabViewState extends State<ReviewsTabView>
+    with AutomaticKeepAliveClientMixin<ReviewsTabView> {
+  @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<ReviewsTabViewModel>.reactive(
       viewModelBuilder: () => ReviewsTabViewModel(),
-      onModelReady: (viewModel) => viewModel.setUp(movieModel!.id!),
+      onModelReady: (viewModel) => viewModel.setUp(widget.movieModel!.id!),
       builder: (context, viewModel, child) {
         return Scaffold(
           body: viewModel.isBusy
@@ -59,4 +65,7 @@ class ReviewsTabView extends StatelessWidget {
       },
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

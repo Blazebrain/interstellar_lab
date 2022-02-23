@@ -44,7 +44,7 @@ class MovieTile extends StatelessWidget {
                     verticalSpaceRegular,
                     RatingBar.builder(
                       initialRating: model!.voteAverage! / 2,
-                      itemSize: 13.h,
+                      itemSize: 15.h,
                       minRating: 1,
                       direction: Axis.horizontal,
                       allowHalfRating: true,
@@ -71,6 +71,7 @@ class MovieTile extends StatelessWidget {
                         ),
                       ),
                     ),
+                    verticalSpaceTiny,
                     if (genreName != null)
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,

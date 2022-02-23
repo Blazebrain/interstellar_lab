@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:interstellar_labs/models/all_movies/all_movies.dart';
 import 'package:interstellar_labs/ui/shared/colors.dart';
 import 'package:interstellar_labs/ui/shared/dumb_widgets/const_widgets.dart';
-import 'package:interstellar_labs/ui/shared/smart_widgets/movie_tile/movie_tile.dart';
+import 'package:interstellar_labs/ui/shared/smart_widgets/movie_tile/movie_tile_view.dart';
 import 'package:stacked/stacked.dart';
 
 import 'search_results_viewmodel.dart';
