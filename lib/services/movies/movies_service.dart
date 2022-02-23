@@ -98,7 +98,7 @@ class MoviesService implements IMovies {
     try {
       final response =
           await _apiService.get(ApiConstants.getMovieImages(movieId));
-      return MovieImagesResponseModel.fromJson(response);
+      return MovieImagesResponseModel.fromJson(response).posters;
     } catch (e) {
       log.e(e);
       throw Failure(message: e.toString());

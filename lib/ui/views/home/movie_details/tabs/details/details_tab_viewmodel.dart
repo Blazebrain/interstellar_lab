@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_final_fields
 
 import 'package:interstellar_labs/app/app.locator.dart';
+import 'package:interstellar_labs/app/app.logger.dart';
 import 'package:interstellar_labs/app/app.router.dart';
 import 'package:interstellar_labs/models/cast_and_crew_model.dart';
 import 'package:interstellar_labs/models/movie_details/movie_details.dart';
@@ -13,6 +14,7 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 class DetailsTabViewModel extends BaseViewModel {
+  final log = getLogger('DetailsTabViewModel');
   final _movieService = locator<IMovies>();
   final _snackbarService = locator<SnackbarService>();
   final _navigationService = locator<NavigationService>();
@@ -20,8 +22,8 @@ class DetailsTabViewModel extends BaseViewModel {
   List<CastAndCrew> _castAndCrewList = [];
   List<CastAndCrew> get castAndCrew => _castAndCrewList;
 
-  List<MovieImagesResponseModel> _movieImagesList = [];
-  List<MovieImagesResponseModel> get movieImagesList => _movieImagesList;
+  List<Posters> _movieImagesList = [];
+  List<Posters> get movieImagesList => _movieImagesList;
 
   List<Videos> _movieVideosList = [];
   List<Videos> get movieVideosList => _movieVideosList;
@@ -64,6 +66,7 @@ class DetailsTabViewModel extends BaseViewModel {
   Future getMovieImages(int movieId) async {
     try {
       _movieImagesList = await _movieService.getMovieImages(movieId);
+      log.i(_movieImagesList);
     } on Failure catch (e) {
       _snackbarService.showCustomSnackBar(
         message: e.message,

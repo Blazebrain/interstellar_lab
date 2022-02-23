@@ -240,7 +240,7 @@ class CastSeeAllViewArguments {
 /// ImagesSeeAllView arguments holder class
 class ImagesSeeAllViewArguments {
   final Key? key;
-  final List<MovieImagesResponseModel>? imagesList;
+  final List<Posters>? imagesList;
   ImagesSeeAllViewArguments({this.key, this.imagesList});
 }
 

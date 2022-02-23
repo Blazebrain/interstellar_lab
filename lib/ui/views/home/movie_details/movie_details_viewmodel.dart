@@ -7,10 +7,13 @@ import 'package:interstellar_labs/services/local_storage/local_storage.dart';
 import 'package:interstellar_labs/utils/constants/storage_keys.dart';
 import 'package:interstellar_labs/utils/export_utils.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class MovieDetailsViewModel extends BaseViewModel {
   final log = getLogger('MovieDetailsViewModel ');
   final _localStorage = locator<ILocalStorage>();
+  final _navigationService = locator<NavigationService>();
+
   List<Genres> _genresList = [];
   List<String> genreNames = [];
 
@@ -34,5 +37,9 @@ class MovieDetailsViewModel extends BaseViewModel {
     }
 
     return genreNames;
+  }
+
+  void goBack() {
+    _navigationService.back();
   }
 }

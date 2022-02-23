@@ -26,7 +26,7 @@ class DetailsTabView extends StatelessWidget {
             : Padding(
                 padding: EdgeInsets.symmetric(horizontal: 18.w),
                 child: SingleChildScrollView(
-                  physics: const NeverScrollableScrollPhysics(),
+                  physics: NeverScrollableScrollPhysics(),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -66,7 +66,7 @@ class DetailsTabView extends StatelessWidget {
                               viewModel.goToCastAndCrewSeeAllView();
                             },
                             child: Text(
-                              'see all',
+                              'View all',
                               style: TextStyle(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 14.sp,
@@ -76,7 +76,7 @@ class DetailsTabView extends StatelessWidget {
                           ),
                         ],
                       ),
-                      verticalSpaceMedium,
+                      verticalSpaceSmall,
                       SizedBox(
                         height: 500.h,
                         child: ListView.builder(
@@ -88,7 +88,51 @@ class DetailsTabView extends StatelessWidget {
                             );
                           },
                         ),
-                      )
+                      ),
+                      verticalSpaceMedium,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Photos',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 18.sp,
+                              color: BrandColors.whiteColor,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              viewModel.goToImagesSeeAllView();
+                            },
+                            child: Text(
+                              'View all',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 14.sp,
+                                color: BrandColors.seaBlueColor,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      verticalSpaceRegular,
+                      SizedBox(
+                        height: 72.h,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 5,
+                          itemBuilder: (context, index) {
+                            return ReusableNetworkImage(
+                              height: 100.h,
+                              width: 120.w,
+                              url:
+                                  'https://image.tmdb.org/t/p/original/${viewModel.movieImagesList[index].filePath!}',
+                            );
+                          },
+                        ),
+                      ),
+                      verticalSpaceMedium,
                     ],
                   ),
                 ),

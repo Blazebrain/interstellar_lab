@@ -34,6 +34,8 @@ class InterstellarIcons {
 class SvgAssets {
   static final SvgData starFireImage = SvgData('assets/images/star_fire.svg');
   static final SvgData playIcon = SvgData('assets/icons/play.svg');
+  static final SvgData responseArrow =
+      SvgData('assets/icons/respond_arrow.svg');
 }
 
 class SvgData {
