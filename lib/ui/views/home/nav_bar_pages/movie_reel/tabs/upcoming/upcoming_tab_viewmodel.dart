@@ -1,10 +1,9 @@
-import 'package:interstellar_labs/app/app.locator.dart';
-import 'package:interstellar_labs/models/all_movies/all_movies.dart';
-import 'package:interstellar_labs/models/genres/genre_model.dart';
-import 'package:interstellar_labs/services/local_storage/local_storage.dart';
-import 'package:interstellar_labs/services/movies/movies.dart';
-import 'package:interstellar_labs/utils/export_utils.dart';
 import 'package:stacked/stacked.dart';
+
+import '../../../../../../../app/app.locator.dart';
+import '../../../../../../../models/all_movies/all_movies.dart';
+import '../../../../../../../models/genres/genre_model.dart';
+import '../../../../../../../services/movies/movies.dart';
 
 class UpcomingTabViewModel extends BaseViewModel {
   List<Genres> _genresList = [];

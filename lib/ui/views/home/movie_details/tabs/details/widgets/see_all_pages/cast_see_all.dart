@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:interstellar_labs/models/cast_and_crew_model.dart';
-import 'package:interstellar_labs/ui/shared/colors.dart';
-import 'package:interstellar_labs/ui/shared/dumb_widgets/const_ui_helpers.dart';
-import 'package:interstellar_labs/ui/views/home/movie_details/tabs/details/details_tab_view.dart';
 
+import '../../../../../../../../models/cast_and_crew_model.dart';
+import '../../../../../../../shared/colors.dart';
+import '../../../../../../../shared/dumb_widgets/const_ui_helpers.dart';
 import '../cast_and_crew_tile.dart';
 
 class CastSeeAllView extends StatelessWidget {
@@ -15,7 +14,7 @@ class CastSeeAllView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cast & Crew'),
+        title: const Text('Cast & Crew'),
         centerTitle: true,
       ),
       body: Column(

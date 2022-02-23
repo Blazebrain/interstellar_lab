@@ -32,7 +32,6 @@ class MovieDetailsView extends StatelessWidget {
               body: CustomScrollView(
             slivers: [
               SliverAppBar(
-                pinned: true,
                 expandedHeight: 280,
                 leading: GestureDetector(
                   onTap: () {
@@ -42,10 +41,22 @@ class MovieDetailsView extends StatelessWidget {
                     Icons.arrow_back_ios,
                   ),
                 ),
+                centerTitle: true,
+                title: Container(
+                  margin: EdgeInsets.only(top: 16.h),
+                  child: Icon(
+                    Icons.play_circle_rounded,
+                    size: 48.w,
+                    color: BrandColors.whiteColor.withOpacity(0.7),
+                  ),
+                ),
                 actions: [
-                  ReusableSvgImage(
-                    svgIcon: SvgAssets.responseArrow,
-                    size: 24.w,
+                  Container(
+                    margin: EdgeInsets.only(right: 16.h),
+                    child: ReusableSvgImage(
+                      svgIcon: SvgAssets.responseArrow,
+                      size: 24.w,
+                    ),
                   ),
                 ],
                 flexibleSpace: FlexibleSpaceBar(
@@ -60,7 +71,7 @@ class MovieDetailsView extends StatelessWidget {
                             'https://image.tmdb.org/t/p/original/${model!.posterPath!}',
                       ),
                       Positioned(
-                        top: -40,
+                        top: 0,
                         bottom: -112,
                         left: 0.5.sw - 83.w,
                         child: Center(
@@ -133,7 +144,7 @@ class MovieDetailsView extends StatelessWidget {
                         horizontalSpaceTiny,
                         RatingBar.builder(
                           initialRating: model!.voteAverage! / 2,
-                          itemSize: 18.h,
+                          itemSize: 24.h,
                           minRating: 1,
                           direction: Axis.horizontal,
                           allowHalfRating: true,
@@ -173,11 +184,11 @@ class MovieDetailsView extends StatelessWidget {
                               style: TextStyle(fontSize: 14.sp),
                             ),
                           ),
-                          Tab(
+                          const Tab(
                             // height: 30.h,
                             child: Text('Review'),
                           ),
-                          Tab(
+                          const Tab(
                             // height: 30.h,
                             child: Text('Showtime'),
                           ),
@@ -193,7 +204,7 @@ class MovieDetailsView extends StatelessWidget {
                   children: [
                     DetailsTabView(movieModel: model),
                     ReviewsTabView(movieModel: model),
-                    ShowTimeTabView(),
+                    const ShowTimeTabView(),
                   ],
                 ),
               ),

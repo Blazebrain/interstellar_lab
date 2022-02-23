@@ -7,10 +7,4 @@ class ReusableNetworkImageViewModel extends BaseViewModel {
   void loading(bool loading) {
     // _loadingController.isActive = loading;
   }
-
-  @override
-  void dispose() {
-    // _loadingController.dispose();
-    super.dispose();
-  }
 }

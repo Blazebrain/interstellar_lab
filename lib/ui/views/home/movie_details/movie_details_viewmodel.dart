@@ -1,13 +1,11 @@
-import 'dart:developer';
-
-import 'package:interstellar_labs/app/app.locator.dart';
-import 'package:interstellar_labs/app/app.logger.dart';
-import 'package:interstellar_labs/models/genres/genre_model.dart';
-import 'package:interstellar_labs/services/local_storage/local_storage.dart';
-import 'package:interstellar_labs/utils/constants/storage_keys.dart';
-import 'package:interstellar_labs/utils/export_utils.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
+
+import '../../../../app/app.locator.dart';
+import '../../../../app/app.logger.dart';
+import '../../../../models/genres/genre_model.dart';
+import '../../../../services/local_storage/local_storage.dart';
+import '../../../../utils/export_utils.dart';
 
 class MovieDetailsViewModel extends BaseViewModel {
   final log = getLogger('MovieDetailsViewModel ');

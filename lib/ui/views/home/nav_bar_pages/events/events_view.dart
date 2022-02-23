@@ -11,7 +11,7 @@ class EventsView extends StatelessWidget {
     return ViewModelBuilder<EventsViewModel>.reactive(
         viewModelBuilder: () => EventsViewModel(),
         builder: (context, viewModel, child) {
-          return Scaffold();
+          return const Scaffold();
         });
   }
 }

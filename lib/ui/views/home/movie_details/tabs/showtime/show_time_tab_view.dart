@@ -11,7 +11,7 @@ class ShowTimeTabView extends StatelessWidget {
     return ViewModelBuilder.reactive(
       viewModelBuilder: () => ShowTimeTabViewModel(),
       builder: (context, viewModel, child) {
-        return Scaffold();
+        return const Scaffold();
       },
     );
   }

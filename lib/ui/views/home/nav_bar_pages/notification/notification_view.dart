@@ -12,7 +12,7 @@ class NotificationsView extends StatelessWidget {
     return ViewModelBuilder<NotificationViewModel>.reactive(
       viewModelBuilder: () => NotificationViewModel(),
       builder: (context, viewModel, child) {
-        return Scaffold();
+        return const Scaffold();
       },
     );
   }

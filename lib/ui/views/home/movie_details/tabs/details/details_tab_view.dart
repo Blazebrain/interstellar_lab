@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:interstellar_labs/models/all_movies/all_movies.dart';
-import 'package:interstellar_labs/models/cast_and_crew_model.dart';
-import 'package:interstellar_labs/ui/shared/colors.dart';
-import 'package:interstellar_labs/ui/shared/dumb_widgets/const_ui_helpers.dart';
-import 'package:interstellar_labs/ui/shared/dumb_widgets/const_widgets.dart';
-import 'package:interstellar_labs/ui/shared/smart_widgets/reusable_network_image/reusable_network_image.dart';
-import 'package:interstellar_labs/ui/views/home/movie_details/tabs/details/widgets/cast_and_crew_tile.dart';
 import 'package:stacked/stacked.dart';
 
+import '../../../../../../models/all_movies/all_movies.dart';
+import '../../../../../shared/colors.dart';
+import '../../../../../shared/dumb_widgets/const_ui_helpers.dart';
+import '../../../../../shared/dumb_widgets/const_widgets.dart';
+import '../../../../../shared/smart_widgets/reusable_network_image/reusable_network_image.dart';
 import 'details_tab_viewmodel.dart';
+import 'widgets/cast_and_crew_tile.dart';
 
 class DetailsTabView extends StatefulWidget {
   final AllMovies? movieModel;

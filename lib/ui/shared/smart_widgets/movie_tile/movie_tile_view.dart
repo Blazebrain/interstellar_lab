@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:interstellar_labs/models/all_movies/all_movies.dart';
-import 'package:interstellar_labs/ui/views/home/movie_details/movie_details_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../colors.dart';

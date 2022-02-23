@@ -14,7 +14,7 @@ class ImagesSeeAllView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Photos'),
+        title: const Text('Photos'),
         centerTitle: true,
       ),
       body: Column(

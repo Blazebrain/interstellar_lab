@@ -241,7 +241,6 @@ class ApiService implements IApi {
       throw Failure(message: 'Please check your internet connection');
     } on dio_client.DioError catch (e) {
       if (e.message.contains('SocketException')) {
-        //TODO: Make this more robust
         _snackBarService.showCustomSnackBar(
           message:
               'Error connecting to the Internet.\nCheck your network connection and pull to refresh',

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:interstellar_labs/models/all_movies/all_movies.dart';
-import 'package:interstellar_labs/models/movie_reviews.dart';
-import 'package:interstellar_labs/ui/shared/colors.dart';
-import 'package:interstellar_labs/ui/shared/dumb_widgets/const_ui_helpers.dart';
-import 'package:interstellar_labs/ui/shared/dumb_widgets/const_widgets.dart';
-import 'package:interstellar_labs/ui/views/home/movie_details/tabs/reviews/reviews_tab_viewmodel.dart';
-import 'package:interstellar_labs/ui/views/home/movie_details/tabs/reviews/widgets/review_tile.dart';
 import 'package:stacked/stacked.dart';
+
+import '../../../../../../models/all_movies/all_movies.dart';
+import '../../../../../shared/colors.dart';
+import '../../../../../shared/dumb_widgets/const_widgets.dart';
+import 'reviews_tab_viewmodel.dart';
+import 'widgets/review_tile.dart';
 
 class ReviewsTabView extends StatefulWidget {
   final AllMovies? movieModel;
@@ -45,6 +44,7 @@ class _ReviewsTabViewState extends State<ReviewsTabView>
                           )
                         : Expanded(
                             child: ListView.separated(
+                              physics: const NeverScrollableScrollPhysics(),
                               separatorBuilder: (context, index) {
                                 return const Divider(
                                   color: ThemeColors.dividerColor,
