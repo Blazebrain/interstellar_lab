@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -40,6 +42,14 @@ class SearchView extends HookWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Text(
+                    'Search Favorite Movies',
+                    style: TextStyle(
+                      fontSize: 32.sp,
+                      color: BrandColors.whiteColor,
+                    ),
+                  ),
+                  verticalSpaceLarge,
                   ReusableTextField(
                     controller: searchController,
                     focusNode: searchFocusNode,
@@ -57,6 +67,10 @@ class SearchView extends HookWidget {
                       await viewModel.searchForMovie(searchController.text);
                     },
                     label: 'Search',
+                    labelTextStyle: TextStyle(
+                      color: BrandColors.whiteColor,
+                      fontSize: 18.sp,
+                    ),
                     customChild: viewModel.busy(searchBusyKey)
                         ? const ReusableDotProgressIndicator()
                         : null,
