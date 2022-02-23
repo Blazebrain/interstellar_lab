@@ -5,6 +5,8 @@ import 'package:interstellar_labs/ui/shared/colors.dart';
 import 'package:interstellar_labs/ui/shared/dumb_widgets/const_ui_helpers.dart';
 import 'package:interstellar_labs/ui/views/home/movie_details/tabs/details/details_tab_view.dart';
 
+import '../cast_and_crew_tile.dart';
+
 class CastSeeAllView extends StatelessWidget {
   final List<CastAndCrew>? castAndCrewList;
   const CastSeeAllView({Key? key, this.castAndCrewList}) : super(key: key);

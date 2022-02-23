@@ -5,9 +5,9 @@ import 'package:interstellar_labs/services/local_storage/local_storage_service.d
 import 'package:interstellar_labs/services/movies/movies.dart';
 import 'package:interstellar_labs/services/movies/movies_service.dart';
 import 'package:interstellar_labs/ui/views/home/movie_details/movie_details_view.dart';
-import 'package:interstellar_labs/ui/views/home/movie_details/tabs/details/widgets/cast_see_all.dart';
-import 'package:interstellar_labs/ui/views/home/movie_details/tabs/details/widgets/images_see_all_view.dart';
-import 'package:interstellar_labs/ui/views/home/movie_details/tabs/details/widgets/videos_see_all.dart';
+import 'package:interstellar_labs/ui/views/home/movie_details/tabs/details/widgets/see_all_pages/cast_see_all.dart';
+import 'package:interstellar_labs/ui/views/home/movie_details/tabs/details/widgets/see_all_pages/images_see_all_view.dart';
+import 'package:interstellar_labs/ui/views/home/movie_details/tabs/details/widgets/see_all_pages/videos_see_all.dart';
 import 'package:interstellar_labs/ui/views/home/nav_bar/nav_bar_view.dart';
 import 'package:interstellar_labs/ui/views/home/nav_bar_pages/events/events_view.dart';
 import 'package:interstellar_labs/ui/views/home/nav_bar_pages/movie_reel/movie_reel_view.dart';
