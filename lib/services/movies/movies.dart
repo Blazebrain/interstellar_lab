@@ -14,4 +14,6 @@ abstract class IMovies {
   Future<dynamic> getMovieImages(int movieId);
 
   Future<dynamic> getMovieVideos(int movieId);
+
+  Future<dynamic> getMovieReviews(int movieId);
 }

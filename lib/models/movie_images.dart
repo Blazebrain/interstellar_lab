@@ -35,7 +35,7 @@ class Backdrops {
   String? filePath;
   int? height;
   String? iso6391;
-  int? voteAverage;
+  double? voteAverage;
   int? voteCount;
   int? width;
 
@@ -76,7 +76,7 @@ class Posters {
   String? filePath;
   int? height;
   String? iso6391;
-  int? voteAverage;
+  double? voteAverage;
   int? voteCount;
   int? width;
 

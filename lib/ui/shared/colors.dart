@@ -6,6 +6,7 @@ class BrandColors {
   static const whiteColor = Color(0xFFFFFFFF);
   static const mudRedColor = Color(0xFFD9251D);
   static const greenColor = Color(0xFF16A997);
+
   static const seaBlueColor = Color(0xFF47CFFF);
   static const lineWhite = Color(0xFF2C3F5B);
 }
@@ -17,4 +18,5 @@ class ThemeColors {
   static const splashOneColor = Color(0xFFE51937);
   static const splashTwoColor = Color(0xFFDB5252);
   static const backgroundColor = Color(0xFF0F1B2B);
+  static const dividerColor = Color(0xFF2B3543);
 }

@@ -6,12 +6,18 @@
 
 // ignore_for_file: public_member_api_docs
 
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked/stacked_annotations.dart';
 
 import '../models/all_movies/all_movies.dart';
-import '../ui/views/home/movie_details/movie_details.dart';
+import '../models/cast_and_crew_model.dart';
+import '../models/movie_images.dart';
+import '../models/movie_videos.dart';
+import '../ui/views/home/movie_details/movie_details_view.dart';
+import '../ui/views/home/movie_details/tabs/details/widgets/cast_see_all.dart';
+import '../ui/views/home/movie_details/tabs/details/widgets/images_see_all_view.dart';
+import '../ui/views/home/movie_details/tabs/details/widgets/videos_see_all.dart';
 import '../ui/views/home/nav_bar/nav_bar_view.dart';
 import '../ui/views/home/nav_bar_pages/events/events_view.dart';
 import '../ui/views/home/nav_bar_pages/movie_reel/movie_reel_view.dart';
@@ -26,12 +32,18 @@ class Routes {
   static const String searchView = '/search-view';
   static const String searchResultsView = '/search-results-view';
   static const String movieDetailsView = '/movie-details-view';
+  static const String castSeeAllView = '/cast-see-all-view';
+  static const String imagesSeeAllView = '/images-see-all-view';
+  static const String videosSeeAllView = '/videos-see-all-view';
   static const String navBarView = '/nav-bar-view';
   static const all = <String>{
     startUpView,
     searchView,
     searchResultsView,
     movieDetailsView,
+    castSeeAllView,
+    imagesSeeAllView,
+    videosSeeAllView,
     navBarView,
   };
 }
@@ -44,6 +56,9 @@ class StackedRouter extends RouterBase {
     RouteDef(Routes.searchView, page: SearchView),
     RouteDef(Routes.searchResultsView, page: SearchResultsView),
     RouteDef(Routes.movieDetailsView, page: MovieDetailsView),
+    RouteDef(Routes.castSeeAllView, page: CastSeeAllView),
+    RouteDef(Routes.imagesSeeAllView, page: ImagesSeeAllView),
+    RouteDef(Routes.videosSeeAllView, page: VideosSeeAllView),
     RouteDef(
       Routes.navBarView,
       page: NavBarView,
@@ -89,6 +104,42 @@ class StackedRouter extends RouterBase {
         builder: (context) => MovieDetailsView(
           key: args.key,
           model: args.model,
+        ),
+        settings: data,
+      );
+    },
+    CastSeeAllView: (data) {
+      var args = data.getArgs<CastSeeAllViewArguments>(
+        orElse: () => CastSeeAllViewArguments(),
+      );
+      return buildAdaptivePageRoute<dynamic>(
+        builder: (context) => CastSeeAllView(
+          key: args.key,
+          castAndCrewList: args.castAndCrewList,
+        ),
+        settings: data,
+      );
+    },
+    ImagesSeeAllView: (data) {
+      var args = data.getArgs<ImagesSeeAllViewArguments>(
+        orElse: () => ImagesSeeAllViewArguments(),
+      );
+      return buildAdaptivePageRoute<dynamic>(
+        builder: (context) => ImagesSeeAllView(
+          key: args.key,
+          imagesList: args.imagesList,
+        ),
+        settings: data,
+      );
+    },
+    VideosSeeAllView: (data) {
+      var args = data.getArgs<VideosSeeAllViewArguments>(
+        orElse: () => VideosSeeAllViewArguments(),
+      );
+      return buildAdaptivePageRoute<dynamic>(
+        builder: (context) => VideosSeeAllView(
+          key: args.key,
+          videosList: args.videosList,
         ),
         settings: data,
       );
@@ -177,4 +228,25 @@ class MovieDetailsViewArguments {
   final Key? key;
   final AllMovies? model;
   MovieDetailsViewArguments({this.key, this.model});
+}
+
+/// CastSeeAllView arguments holder class
+class CastSeeAllViewArguments {
+  final Key? key;
+  final List<CastAndCrew>? castAndCrewList;
+  CastSeeAllViewArguments({this.key, this.castAndCrewList});
+}
+
+/// ImagesSeeAllView arguments holder class
+class ImagesSeeAllViewArguments {
+  final Key? key;
+  final List<MovieImagesResponseModel>? imagesList;
+  ImagesSeeAllViewArguments({this.key, this.imagesList});
+}
+
+/// VideosSeeAllView arguments holder class
+class VideosSeeAllViewArguments {
+  final Key? key;
+  final List<Videos>? videosList;
+  VideosSeeAllViewArguments({this.key, this.videosList});
 }

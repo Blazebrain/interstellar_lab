@@ -4,7 +4,10 @@ import 'package:interstellar_labs/services/local_storage/local_storage.dart';
 import 'package:interstellar_labs/services/local_storage/local_storage_service.dart';
 import 'package:interstellar_labs/services/movies/movies.dart';
 import 'package:interstellar_labs/services/movies/movies_service.dart';
-import 'package:interstellar_labs/ui/views/home/movie_details/movie_details.dart';
+import 'package:interstellar_labs/ui/views/home/movie_details/movie_details_view.dart';
+import 'package:interstellar_labs/ui/views/home/movie_details/tabs/details/widgets/cast_see_all.dart';
+import 'package:interstellar_labs/ui/views/home/movie_details/tabs/details/widgets/images_see_all_view.dart';
+import 'package:interstellar_labs/ui/views/home/movie_details/tabs/details/widgets/videos_see_all.dart';
 import 'package:interstellar_labs/ui/views/home/nav_bar/nav_bar_view.dart';
 import 'package:interstellar_labs/ui/views/home/nav_bar_pages/events/events_view.dart';
 import 'package:interstellar_labs/ui/views/home/nav_bar_pages/movie_reel/movie_reel_view.dart';
@@ -22,6 +25,9 @@ import 'package:stacked_services/stacked_services.dart';
     AdaptiveRoute(page: SearchView),
     AdaptiveRoute(page: SearchResultsView),
     AdaptiveRoute(page: MovieDetailsView),
+    AdaptiveRoute(page: CastSeeAllView),
+    AdaptiveRoute(page: ImagesSeeAllView),
+    AdaptiveRoute(page: VideosSeeAllView),
     AdaptiveRoute(
       page: NavBarView,
       children: [

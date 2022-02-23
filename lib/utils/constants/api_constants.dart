@@ -52,14 +52,35 @@ class ApiConstants {
   static Uri getMovieDetails(int? movieId) => Uri(
         scheme: httpsScheme,
         host: tmdbApiHost,
-        path: '$tmdbApiVersion$movieEndpoint$movieId',
+        path: '$tmdbApiVersion$movieEndpoint/$movieId',
         query: 'api_key=$apiKey',
       );
 
   static Uri getCastAndCrew(int movieId) => Uri(
         scheme: httpsScheme,
         host: tmdbApiHost,
-        path: '$tmdbApiVersion$movieEndpoint$movieId/credits',
+        path: '$tmdbApiVersion$movieEndpoint/$movieId/credits',
+        query: 'api_key=$apiKey',
+      );
+
+  static Uri getMovieImages(int movieId) => Uri(
+        scheme: httpsScheme,
+        host: tmdbApiHost,
+        path: '$tmdbApiVersion$movieEndpoint/$movieId/images',
+        query: 'api_key=$apiKey',
+      );
+
+  static Uri getMovieVideos(int movieId) => Uri(
+        scheme: httpsScheme,
+        host: tmdbApiHost,
+        path: '$tmdbApiVersion$movieEndpoint/$movieId/videos',
+        query: 'api_key=$apiKey',
+      );
+
+  static Uri getMovieReviews(int movieId) => Uri(
+        scheme: httpsScheme,
+        host: tmdbApiHost,
+        path: '$tmdbApiVersion$movieEndpoint/$movieId/reviews',
         query: 'api_key=$apiKey',
       );
 }

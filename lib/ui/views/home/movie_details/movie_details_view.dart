@@ -83,6 +83,8 @@ class MovieDetailsView extends StatelessWidget {
                           ),
                           verticalSpaceMedium,
                           Container(
+                            height: 36.h,
+                            margin: EdgeInsets.symmetric(horizontal: 18.w),
                             decoration: BoxDecoration(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(26.r)),
@@ -98,15 +100,18 @@ class MovieDetailsView extends StatelessWidget {
                               ),
                               tabs: [
                                 Tab(
+                                  height: 30.h,
                                   child: Text(
                                     'Details',
                                     style: TextStyle(fontSize: 14.sp),
                                   ),
                                 ),
-                                const Tab(
+                                Tab(
+                                  height: 30.h,
                                   child: Text('Review'),
                                 ),
-                                const Tab(
+                                Tab(
+                                  height: 30.h,
                                   child: Text('Showtime'),
                                 ),
                               ],
@@ -118,12 +123,12 @@ class MovieDetailsView extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SliverFillRemaining(
+                SliverFillRemaining(
                   // hasScrollBody: false,
                   child: TabBarView(
                     children: [
-                      DetailsTabView(),
-                      ReviewsTabView(),
+                      DetailsTabView(movieModel: model),
+                      ReviewsTabView(movieModel: model),
                       ShowTimeTabView(),
                     ],
                   ),
